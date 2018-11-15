@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>HCI Project</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="page.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<div class="cards">
+<div class="flex-container">
+<div class="cardContainer">
+	<div id="card"> 
+		<div class="front" id="current"></div> 
+		<div class="back"></div> 
+	</div>
+	</div>
+
+	<div class="cardContainer">
+		<div id="deck"> 
+		<div class="front front-deck"> 
+		Deck
+		</div> 
+	</div>
+</div>
+</div>
+<div class="buttons"><button id="prev"><i class="material-icons">arrow_left</i></button><button id="restart"><i class="material-icons">replay</i></button><button id="shuffle"><i class="material-icons">shuffle</i></button><button id="next"><i class="material-icons">arrow_right</i></button></div>
+</div>
+
+<div class="form">
+<form>
+<div>
+<label for="front0">Front</label>
+<textarea id="front0" name="front0"></textarea>
+
+<label for="back0">Back</label>
+<textarea id="back0" name="back0"></textarea>
+</div>
+</form>
+<div><button class="add formButtons"><i class="material-icons">add_circle</i></button><button class="submit formButtons"><i class="material-icons">send</i></button></div>
+</div>
+</body>
+<script>
+$("#card").flip();
+var front = [];
+var back = [];
+count = 0;
+formCount = 0;
+
+function init() {
+	$("#current").append(front[count]);
+	$(".back").append(back[count]);
+}
+
+<!--Movement Functions-->
+function forward() {
+	$("#current").empty()
+	$(".back").empty();
+	if(count >= front.length-1) {
+		count = 0;
+	} else {
+		count++;
+	}
+	$("#current").append(front[count]);
+	$(".back").append(back[count]);
+	$("#card").flip(false);
+	$("#deck").effect("shake", {distance:5}, "slow");
+	borderMove();
+	}
+	
+	function prev() {
+	$("#current").empty()
+	$(".back").empty();
+	if(count <= 0) {
+		count = front.length-1;
+	} else {
+		count--;
+	}
+	$("#current").append(front[count]);
+	$(".back").append(back[count]);
+	$("#card").flip(false);
+	}
+	
+	function restart() {
+	$("#current").empty()
+	$(".back").empty();
+	count = 0;
+	$("#current").append(front[count]);
+	$(".back").append(back[count]);
+	$("#card").flip(false);
+	}
+	
+	function shuffle() {
+	<!--Shuffle here-->
+	<!--Both arrays need to be shuffled in the same way since the only way we're keeping track of which front goes with which back is array index-->
+	}
+	
+	<!--Other funcs-->
+	function addForm() {
+		formCount++;
+		$("form").append(`<div>
+		<label for="front${formCount}">Front</label>
+		<textarea id="front${formCount}" name="front${formCount}"></textarea>
+		<label for="back${formCount}">Back</label>
+		<textarea id="back${formCount}" name="back${formCount}"></textarea>
+		</div>`);
+	}
+	
+	function sendTo() {
+		$("form :input").each(function(index) {
+			if(index % 2 == 0) {
+				front.push($(this).val());
+			} else {
+				back.push($(this).val());
+			}
+		});
+		$(".form").css("display", "none");
+		$(".cards").css("display", "unset");
+		init();
+	}
+	function borderMove() {
+		$(".front-deck").transfer({
+			to: $("#current"),
+			className: "border-transfer",
+			duration: 500
+		}, function(x) {
+			$("#current").css("border", "3px solid orange");
+		});
+	}
+
+
+<!--Movement-->
+$("#card").on("click", function(x) {
+	if($("#current").css("border")) {
+		$("#current").css("border", "");;
+	}
+});
+
+$("#deck").on("click", function(x) {
+	forward();
+});
+
+$("#next").on("click", function(x) {
+	forward();
+});
+
+$("#prev").on("click", function(x) {
+	prev();
+});
+
+$("#restart").on("click", function(x) {
+	restart();
+});
+
+$("#shuffle").on("click", function(x) {
+	shuffle();
+});
+
+$(".add").on("click", function(x) {
+	addForm();
+});
+
+$(".submit").on("click", function(x) {
+	sendTo();
+});
+</script>
+</html>
