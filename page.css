@@ -102,3 +102,15 @@ footer {
   text-align: center;
   margin-bottom: 20px;
 }
+
+.cardTitle{
+  font-size: 16px;
+  border-radius: 3px;
+  border: 2px solid black;
+  margin: 1rem;
+  background-color: linen;
+}
+
+.deck-name{
+  text-align: center;
+}

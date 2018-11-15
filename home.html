@@ -10,9 +10,12 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-
+	<div class = "deck-name">
+		<h1 id="deck-name"></h1>
+	</div>
 	<div class="cards">
 		<div class="flex-container">
+
 			<div class="cardContainer">
 				<div id="card">
 					<div class="front" id="current"></div>
@@ -34,9 +37,10 @@
 	<div class="form">
 		<form>
 			<div>
-				<textarea id="front0" name="front0" placeholder="Front" class="cardEntry"></textarea>
+				<input id="title0" name="title0" placeholder="Set Name" class="cardTitle"></input><br>
+				<textarea id="front0" name="front0" placeholder="Question" class="cardEntry"></textarea>
 
-				<textarea id="back0" name="back0" placeholder="Back" class="cardEntry"></textarea>
+				<textarea id="back0" name="back0" placeholder="Answer" class="cardEntry"></textarea>
 			</div>
 		</form>
 		<div><button class="add formButtons"><i class="material-icons">add_circle</i></button><button class="submit formButtons"><i class="material-icons">send</i></button></div>
@@ -48,6 +52,7 @@
 
 <script>
 $("#card").flip();
+var title = [];
 var front = [];
 var back = [];
 count = 0;
@@ -56,6 +61,7 @@ formCount = 0;
 function init() {
 	$("#current").append(front[count]);
 	$(".back").append(back[count]);
+	$("#deck-name").append(title[count]);
 }
 
 <!--Movement Functions-->
@@ -126,18 +132,20 @@ function shuffle() {
 function addForm() {
 	formCount++;
 	$("form").append(`<div>
-		<textarea id="front${formCount}" name="front${formCount}" placeholder="Front" class="cardEntry" {
+		<textarea id="front${formCount}" name="front${formCount}" placeholder="Question" class="cardEntry" {
 			constructor() {
 
 			}
 		}></textarea>
-		<textarea id="back${formCount}" name="back${formCount}" placeholder="Back" class="cardEntry"></textarea>
+		<textarea id="back${formCount}" name="back${formCount}" placeholder="Answer" class="cardEntry"></textarea>
 		</div>`);
 	}
 
 	function sendTo() {
 		$("form :input").each(function(index) {
-			if(index % 2 == 0) {
+			if(index == 0){
+				title.push($(this).val());
+			}else if(index % 2 != 0) {
 				front.push($(this).val());
 			} else {
 				back.push($(this).val());
