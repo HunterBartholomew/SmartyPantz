@@ -1,17 +1,22 @@
 html, body {
 background-color:steelblue;
+font-family: Arial, Helvetica, sans-serif;
 }
+
 .flex-container {
   display: flex;
   justify-content: center;
   }
+
 .cardContainer {
 	width: 28%;
 	margin:3%;
 }
+
 #card {
-	
+
 }
+
 .front, .back {
 	text-align:center;
 	height:225px !important;
@@ -19,25 +24,32 @@ background-color:steelblue;
 	line-height:225px;
 	background-color:#fff;
 }
+
 .front {
-	
+
 }
+
 .back {
 
 }
+
 .buttons {
 	text-align:center;
 }
+
 button {
 	background-color:#fff;
 	border:1px solid #A9A9A9;
 	margin:0;
 }
+
 .material-icons {
 	font-size:36px !important;
 	display: inline-flex !important;
 	vertical-align: middle !important;
+  color: #43536d;
 }
+
 .front-deck {
   box-shadow:
     /* The top layer shadow */
@@ -51,6 +63,7 @@ button {
     /* The third layer shadow */
     0 -20px 1px -9px rgba(0,0,0,0.15);
 }
+
 .border-transfer {
 	border:3px solid orange;
 }
@@ -60,11 +73,32 @@ button {
 }
 
 .form {
+  width: 50%;
+  margin: auto;
+  border-color: white;
+  background-color: white;
 	text-align:center;
-	color:magenta;
+	color:white;
 }
 
 .formButtons {
-	background-color:steelblue;
+	background-color:transparent;
 	border:0px;
+  margin: 5px;
+}
+
+.cardEntry {
+  border-radius: 3px;
+  border: 2px solid black;
+  margin: .5rem;
+  background-color: linen;
+}
+
+footer {
+  color: white;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
 }
