@@ -74,17 +74,18 @@ button {
 
 .form {
   width: 50%;
-  margin: auto;
+  margin: 30px auto;
   border-color: white;
   background-color: white;
 	text-align:center;
-	color:white;
+  color:white;
+  display: block;
 }
 
 .formButtons {
 	background-color:transparent;
 	border:0px;
-  margin: 5px;
+  margin: 10px 5px;
 }
 
 .cardEntry {
@@ -96,11 +97,11 @@ button {
 
 footer {
   color: white;
-  position: fixed;
-  bottom: 0px;
+  position: relative;
   width: 100%;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 40px 0 20px;
+  display: block;
 }
 
 .cardTitle{
@@ -111,6 +112,48 @@ footer {
   background-color: linen;
 }
 
-.deck-name{
+.deck-name, .home-title{
   text-align: center;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ccc;
+}
+
+.navbar li {
+  float: left;
+  width: 25%;
+}
+
+.navbar li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 5px 26px;
+  text-decoration: none;
+  border: solid 0.5px black
+}
+
+/* Change the link color to #111 (black) on hover */
+.navbar li a:hover {
+  background-color: #666;
+  color: white;
+}
+
+.select-deck select{
+  width: 200px;
+  padding: 5px;
+  margin-top: 15px;
+  height: 30px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='#444' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  background-color: #ccc;
 }
