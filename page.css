@@ -99,6 +99,7 @@ footer {
   color: white;
   position: relative;
   width: 100%;
+  bottom: -18rem;
   text-align: center;
   margin: 40px 0 20px;
   display: block;
@@ -156,4 +157,21 @@ footer {
   background-position: 100% 50%;
   background-repeat: no-repeat;
   background-color: #ccc;
+}
+
+.deck-navbar{
+  display:none;
+  text-decoration: none;
+  background-color: white;
+  margin-top: 2rem;
+  margin-left: 21rem;
+  margin-right: 21rem;
+  color: #43536d;
+  text-align: center;
+  border: none;
+  height: auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 5px;
 }

@@ -14,7 +14,7 @@ function init() {
         $(".home-title").css("display", "none");
         $(".navbar").css("display", "none");
 		$(".select-deck").css("display", "none");
-		// $(".deck-navbar").css("display", "block");
+		$(".deck-navbar").css("display", "block");
 	}
 }
 
