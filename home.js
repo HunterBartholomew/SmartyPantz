@@ -13,7 +13,8 @@ function init() {
 	if(deckName) {
         $(".home-title").css("display", "none");
         $(".navbar").css("display", "none");
-        $(".select-deck").css("display", "none");
+		$(".select-deck").css("display", "none");
+		// $(".deck-navbar").css("display", "block");
 	}
 }
 
@@ -96,14 +97,20 @@ function addForm() {
 
 	function sendTo() {
 		$("form :input").each(function(index) {
-			if(index == 0){
+			console.log(index)
+			console.log($(this).val())
+
+			if(index == 1){
 				title.push($(this).val());
-			}else if(index % 2 != 0) {
+			}else if(index % 2 === 0 && index !=0) {
 				front.push($(this).val());
-			} else {
+			} else if(index !==0) {
 				back.push($(this).val());
 			}
 		});
+		console.log(title)
+		console.log(front)
+		console.log(back)
 		$(".form").css("display", "none");
 		$(".cards").css("display", "unset");
 		init();
