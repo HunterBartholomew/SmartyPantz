@@ -175,3 +175,51 @@ footer {
   border-radius: 4px;
   padding: 5px;
 }
+
+
+
+.swcontrols {
+    margin-top: 2rem;
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.swbutton {
+  color: #bbb;
+  font-size: 4vw;
+  margin: 0 0.5em;
+  text-decoration: none;
+}
+
+.swbutton:first-child {
+    margin-left: 0;
+}
+
+.swbutton:last-child {
+    margin-right: 0;
+}
+
+.swbutton:hover {
+  color: white;
+}
+
+.stopwatch {
+    display:none;
+    font-size: 3rem;
+    height: 100%;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.swresults {
+  border-color: lime;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
