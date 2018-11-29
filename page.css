@@ -95,6 +95,10 @@ button {
   background-color: linen;
 }
 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+	color: #444444;
+}
+
 footer {
   color: white;
   position: relative;
