@@ -26,7 +26,8 @@
 	</div>
 	<div class="select-deck">
 		<form>
-			<select>
+			<label for="decks-list" role="presentation">Select a existing deck</label>
+			<select id="decks-list">
 				<option value="">Card Decks</option>
 				<option>Math</option>
 				<option>Geography</option>
@@ -56,16 +57,16 @@
 		</div>
 		<div class="buttons">
 			<button id="prev" aria-label="Previous card">
-				<i class="material-icons">arrow_left</i>
+				<div class="material-icons">arrow_left</div>
 			</button>
 			<button id="restart" aria-label="Restart deck">
-				<i class="material-icons">replay</i>
+				<div class="material-icons">replay</div>
 			</button>
 			<button id="shuffle" aria-label="Shuffle deck">
-				<i class="material-icons">shuffle</i>
+				<div class="material-icons">shuffle</div>
 			</button>
 			<button id="next" aria-label="Next card">
-				<i class="material-icons">arrow_right</i>
+				<div class="material-icons">arrow_right</div>
 			</button>
 		</div>
 		
@@ -74,18 +75,20 @@
 	<div class="form">
 		<form class="deck-form">
 			<div class="deck-form-content">
+				<label for="title0">Title of the deck</label>
 				<input id="title0" name="title0" placeholder="Deck Name" class="cardTitle" aria-label="Enter title for deck" /><br>
+				<label for="front0">Front side of the card</label>
 				<textarea id="front0" name="front0" placeholder="Question" class="cardEntry" aria-label="Enter question text"></textarea>
-
+				<label for="back0">Back side of the card</label>
 				<textarea id="back0" name="back0" placeholder="Answer" class="cardEntry" aria-label="Enter corresponding answer text"></textarea>
 			</div>
 		</form>
 		<div class="buttons">
 			<button class="add formButtons" role="button" aria-label="Add new question/answer pair">
-				<i class="material-icons">add_circle</i>
+				<div class="material-icons">add_circle</div>
 			</button>
 			<button class="submit formButtons" aria-label="Create Deck of Cards">
-				<i class="material-icons">send</i>
+				<div class="material-icons">send</div>
 			</button>
 		</div>
 	</div>

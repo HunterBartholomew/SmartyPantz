@@ -13,24 +13,12 @@ font-family: Arial, Helvetica, sans-serif;
 	margin:3%;
 }
 
-#card {
-
-}
-
 .front, .back {
 	text-align:center;
 	height:225px !important;
 	vertical-align:middle;
 	line-height:225px;
 	background-color:#fff;
-}
-
-.front {
-
-}
-
-.back {
-
 }
 
 .buttons {
@@ -226,4 +214,8 @@ footer {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+form label {
+  display: none;
 }
